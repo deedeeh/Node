@@ -20,7 +20,8 @@ app.get('/speak/:animal', (req, res) => {
 })
 
 app.get('/repeat/:word/:num', (req, res) => {
-  const repeatedWord = req.params.word.repeat(req.params.num)
+  const word = req.params.word + ' '
+  const repeatedWord = word.repeat(req.params.num)
   return res.send(repeatedWord)
 })
 
