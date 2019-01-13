@@ -1,0 +1,14 @@
+{
+  "name": "secondexpressapp",
+  "version": "1.0.0",
+  "description": "This is a small exercise to practice Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dina Hafez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
