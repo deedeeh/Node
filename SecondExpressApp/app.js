@@ -2,9 +2,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-app.get('/', (resp, res) => res.send('Hi there, welcome to my assignment!'))
-app.get('/speak/:animal', (resp, res) => {
-  switch(resp.params.animal) {
+app.get('/', (req, res) => res.send('Hi there, welcome to my assignment!'))
+app.get('/speak/:animal', (req, res) => {
+  switch(req.params.animal) {
     case 'pig':
       res.send('Oink')
       break;
@@ -18,5 +18,12 @@ app.get('/speak/:animal', (resp, res) => {
       res.send('Sorry, cannot find your animal!')
   }
 })
+
+app.get('/repeat/:word/:num', (req, res) => {
+  const repeatedWord = req.params.word.repeat(req.params.num)
+  return res.send(repeatedWord)
+})
+
+app.get('*', (req, res) => res.send('Sorry, page not found...'))
 
 app.listen(port)
