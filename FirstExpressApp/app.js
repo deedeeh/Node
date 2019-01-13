@@ -8,8 +8,8 @@ app.get('/bye', (req, res) => res.send('Goodbye!'))
 app.get('/cat', (req, res) => res.send('MEOW!'))
 
 //Route parameters, they start with colon ':' 
-app.get('/r/:redditName/', (resp, res) => {
-  return res.send(`I am a ${resp.params.redditName} reddit`)
+app.get('/r/:redditName/', (req, res) => {
+  return res.send(`I am a ${req.params.redditName} reddit`)
 })
 
 //can be used for error messages for routes not defined.
