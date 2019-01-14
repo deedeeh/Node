@@ -5,3 +5,9 @@
     <%= friend %>
   </li>
 <% }) %>
+
+<h3>New Friend Form</h3>
+<form action='/addFriend' method='POST'>
+  <input type='text' name='newFriend' placeholder='friend name'>
+  <button>Add Friend</button>
+</form>

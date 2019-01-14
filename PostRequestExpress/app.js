@@ -1,7 +1,11 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 const port = 3000
 
+const friends = ['Paki', 'Shouka', 'Sandy', 'Noosha', 'Riri']
+
+app.use(bodyParser.urlencoded({extended: true}))
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => 
@@ -9,11 +13,12 @@ app.get('/', (req, res) =>
 )
 
 app.post('/addFriend', (req, res) => {
-  res.send('You have you reached the post route!')
+  const newFriend = req.body.newFriend
+  friends.push(newFriend)
+  res.send('You have reached the post request!')
 })
 
 app.get('/friends', (req, res) => {
-  const friends = ['Paki', 'Shouka', 'Sandy', 'Noosha', 'Riri']
   res.render('friends', {friends: friends})
 })
 
