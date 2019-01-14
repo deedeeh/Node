@@ -1,0 +1,15 @@
+{
+  "name": "postrequestexpress",
+  "version": "1.0.0",
+  "description": "Test post requests with express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dina Hafez",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
