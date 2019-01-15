@@ -15,13 +15,11 @@ app.get('/', (req, res) =>
 app.post('/addFriend', (req, res) => {
   const newFriend = req.body.newFriend
   friends.push(newFriend)
-  res.send('You have reached the post request!')
+  res.redirect('/friends')
 })
 
 app.get('/friends', (req, res) => {
   res.render('friends', {friends: friends})
 })
-
-
 
 app.listen(port, console.log('Server started!'))
