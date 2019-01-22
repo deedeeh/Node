@@ -13,9 +13,20 @@ capitalize = (s) => {
 
 app.get('/customise/:name/:jobTitle/:interest', (req, res) => {
   const name = capitalize(req.params.name)
-  const jobTitle = req.params.jobTitle
-  const interest = req.params.interest
-  res.render('customise', {custName: name, custJob: jobTitle, custInterest: interest})
+  const jobTitle = capitalize(req.params.jobTitle)
+  const interest = capitalize(req.params.interest)
+  res.render('customise', {custName: name})
+  // , custJob: wordsChecker(jobTitle), custInterest: wordsChecker(interest)})
 })
+
+//trying to check if the input is more than one word, camelCase, I need to split it and display it the user 
+// wordsChecker = (s) => {
+//   let wordsArr = s.split(' ')
+//   if(wordsArr.length >= 1) {
+//     wordsArr.splice()
+//   }
+//   console.log(wordsArr.length)
+//   return wordsArr.join(' ')
+// }
 
 app.listen(3000, console.log('Server is running!'))
