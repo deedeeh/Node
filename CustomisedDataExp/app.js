@@ -19,6 +19,10 @@ app.get('/customise/:name/:jobTitle/:interest', (req, res) => {
 
 })
 
+app.get('/skills', (req, res) => {
+  res.render('skills', {skills: req.query})
+})
+
 // trying to check if the input is more than one word, camelCase, I need to split it and display it the user 
 //because I want the name to be capitalised 
 wordsCheckerForName = (s) => {
