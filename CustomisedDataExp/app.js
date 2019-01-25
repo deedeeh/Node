@@ -1,7 +1,10 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
 
 app.set('view engine', 'ejs')
+
+const urlencodedParser = bodyParser.urlencoded({extended: false})
 
 app.get('/', (req, res) => {
   res.render('index')
@@ -19,9 +22,17 @@ app.get('/customise/:name/:jobTitle/:interest', (req, res) => {
 
 })
 
+//get skills data by query strings 
 app.get('/skills', (req, res) => {
   res.render('skills', {skills: req.query})
 })
+
+//post request with form and direct to another page
+app.post('/skills', urlencodedParser, (req, res) => {
+  console.log(req.body)
+  res.render('skills-by-form', {data: req.body})
+})
+
 
 // trying to check if the input is more than one word, camelCase, I need to split it and display it the user 
 //because I want the name to be capitalised 

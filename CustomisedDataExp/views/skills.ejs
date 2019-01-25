@@ -1,9 +1,25 @@
 <% include partials/header.ejs %>
   <main>
-    <h2>The skills</h2>
+    <h2>Your skills collected with Query Strings</h2>
     <ul>
       <li>Languages: <%= skills.languages %></li>
       <li>Frameworks: <%= skills.frameworks %></li>
     </ul>
   </main>
+  <hr />
+  <section>
+    <h3>Skills Form</h3>
+    <form method='POST' action='/skills'>
+      <label for='programming'>Programming Languages:</label><br />
+      <input type='checkbox' name='programming' value='JavaScript'>JavaScript<br />
+      <input type='checkbox' name='programming' value='Ruby'>Ruby<br />
+      <input type='checkbox' name='programming' value='Python'>Python<br />
+      <input type='checkbox' name='programming' value='PHP'>PHP<br />
+      <input type='checkbox' name='programming' value='Java'>Java<br />
+      <input type='checkbox' name='programming' value='C#'>C#<br />
+      <input type='checkbox' name='programming' value='C++'>C++<br />
+      <br />
+      <input type='submit' value='Submit'>
+    </form>
+  </section>
 <% include partials/footer.ejs %>
