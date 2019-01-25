@@ -1,8 +1,10 @@
 <% include partials/header.ejs %>
   <main>
     <h2>Your skills collected with Query Strings</h2>
+    <h4>Add Programming Languages and Frameworks</h4>
+    <p>Follow this example: <em>localhost:3000/skills?languages=JavaScript&languages=%20Ruby&frameworks=React&frameworks=%20Ruby%20on%20Rails</em></p>
     <ul>
-      <li>Languages: <%= skills.languages %></li>
+      <li>Programming Languages: <%= skills.languages %></li>
       <li>Frameworks: <%= skills.frameworks %></li>
     </ul>
   </main>
@@ -11,13 +13,24 @@
     <h3>Skills Form</h3>
     <form method='POST' action='/skills'>
       <label for='programming'>Programming Languages:</label><br />
-      <input type='checkbox' name='programming' value='JavaScript'>JavaScript<br />
+      <input type='checkbox' name='programming' value='JavaScript'>JavaScript
       <input type='checkbox' name='programming' value='Ruby'>Ruby<br />
-      <input type='checkbox' name='programming' value='Python'>Python<br />
+      <input type='checkbox' name='programming' value='Python'>Python
       <input type='checkbox' name='programming' value='PHP'>PHP<br />
-      <input type='checkbox' name='programming' value='Java'>Java<br />
+      <input type='checkbox' name='programming' value='Java'>Java
       <input type='checkbox' name='programming' value='C#'>C#<br />
-      <input type='checkbox' name='programming' value='C++'>C++<br />
+      <input type='checkbox' name='programming' value='C++'>C++
+      <input type='checkbox' name='programming' value='Go'>Go<br />
+      <br />
+      <label for='frameworks'>Frameworks:</label><br />
+      <input type='checkbox' name='frameworks' value='React'>React.js
+      <input type='checkbox' name='frameworks' value='Angular'>Angular.js<br />
+      <input type='checkbox' name='frameworks' value='Node'>Node.js
+      <input type='checkbox' name='frameworks' value='RubyOnRails'>Ruby on Rails<br />
+      <input type='checkbox' name='frameworks' value='ASP.NET'>ASP.NET
+      <input type='checkbox' name='frameworks' value='Symfony'>Symfony<br />
+      <input type='checkbox' name='frameworks' value='Laravel'>Laravel
+      <input type='checkbox' name='frameworks' value='Yii'>Yii<br />
       <br />
       <input type='submit' value='Submit'>
     </form>
