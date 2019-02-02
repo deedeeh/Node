@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>Todo List</title>
-    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+    <script src='https://code.jquery.com/jquery-1.12.1.min.js'></script>
+    <script src='/assets/todo-list.js' type='text/javascript' language='JavaScript'></script>
     <link rel='stylesheet' href='./assets/styles.css' type='text/css'>
   </head>
   <body>
@@ -13,10 +14,11 @@
         <button type='submit'>Add Item</button>
       </form>
       <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
+        <% todos.map(todo => { %>
+          <li><%= todo.item %></li>
+        <% }) %>
       </ul>
     </div>
   </body>
 </html>
+
