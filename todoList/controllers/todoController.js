@@ -12,34 +12,34 @@ const todoSchema = new mongoose.Schema({
 });
 
 const Todo = mongoose.model('Todo', todoSchema);
-const itemOne = Todo({item: 'take a break'}).save(err => {
-  if(err) throw err;
-  console.log('item saved successfully!');
-});
-
-let data = [
-  {item: 'prepare food'},
-  {item: 'feed cat'},
-  {item: 'practice node.js'}
-];
 
 module.exports = function(app) {
 
   //get a todo 
   app.get('/todo', (req, res) => {
-    res.render('todo', {todos: data});
+    //get data from mongodb and pass it to the view
+    Todo.find({}, (err, data) => {
+      if(err) throw err;
+      res.render('todo', {todos: data});
+    });
   });
 
   //create a todo
   app.post('/todo', urlencodedParser, (req, res) => {
-    data.push(req.body);
-    res.json(data);
+    //get data from the view and add it to mongodb
+    Todo(req.body).save((err, data) => {
+      if(err) throw err;
+      res.json(data);
+    });
   });
 
   //delete a todo
   app.delete('/todo/:item', (req, res) => {
-    data = data.filter(todo => todo.item.replace(/ /g, '-') !== req.params.item);
-    res.json(data);
+    //delete the requested item from mongodb
+    Todo.find({item: req.params.item.replace(/\-/g, ' ')}).remove((err, data) => {
+      if(err) throw err;
+      res.json(data)
+    });
   });
 
 
