@@ -1,5 +1,21 @@
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+require('dotenv').config();
 const urlencodedParser = bodyParser.urlencoded({extended: false});
+
+//connect to the database 
+mongoose.connect(process.env.MLAB_URI, { useNewUrlParser: true });
+
+//create a schema
+const todoSchema = new mongoose.Schema({
+  item: String
+});
+
+const Todo = mongoose.model('Todo', todoSchema);
+const itemOne = Todo({item: 'take a break'}).save(err => {
+  if(err) throw err;
+  console.log('item saved successfully!');
+});
 
 let data = [
   {item: 'prepare food'},
