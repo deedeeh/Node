@@ -1,0 +1,9 @@
+<h1>Results Page</h1>
+
+<% movies.Search.forEach(movie => { %>
+  <div>
+    <h3><%= movie.Title %> | <%= movie.Year %></h3>
+    <img src='<%= movie.Poster %>' >
+    <hr />
+  </div>
+<% }) %>
