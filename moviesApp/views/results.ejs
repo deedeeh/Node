@@ -1,14 +1,16 @@
 <% include partials/header.ejs %>
 
-<h2>Results Page</h2>
+<h2 class='subheading'>Results Page</h2>
 
+<div class='main_wrapper'>
 <% movies.Search.forEach(movie => { %>
   <div class='wrapper'>
     <h3><%= movie.Title %> | <%= movie.Year %></h3>
-    <img src='<%= movie.Poster %>'>
+    <img class='poster_image' src='<%= movie.Poster %>'>
   </div>
 <% }) %>
+<button class='search_again_btn' onClick="location.href='/'">Search Again</button>
+</div>
 
-<button onClick="location.href='/'">Search Again</button>
 
 <% include partials/footer.ejs %>

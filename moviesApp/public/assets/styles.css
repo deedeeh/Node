@@ -1,3 +1,32 @@
-body {
-  background: lightcyan;
+header, .subheading, form {
+  text-align: center;
+}
+
+.main_wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: inline-block;
+  text-align: center;
+  width: 40%;
+}
+
+div.wrapper:nth-child(even) {
+  float: right;
+}
+
+.poster_image {
+  height: 400px;
+}
+
+.search_again_btn {
+  display: flex;
+  justify-content: center;
+  margin: 2em auto;
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+  font-size: 1em;
 }
