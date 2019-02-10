@@ -1,5 +1,52 @@
+body {
+  background: #465362;
+  margin: 0;
+  padding: 0;
+}
+
 header, .subheading, form {
   text-align: center;
+}
+
+header {
+  background: #750D37;
+}
+
+h1 {
+  margin: 0;
+  padding: 0.75em;;
+}
+
+h1, .subheading {
+  color: #F4FFFD;
+}
+
+.search_input {
+  display: block;
+  margin: 12px auto;
+  padding: 10px;
+  width: 20%;
+  font-size: 1em;
+}
+
+input.search_submit {
+  padding: 10px;
+  width: 22%;
+  background: #750D37;
+  color: #F4FFFD;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  font-size: 1em;
+  box-shadow: 1px 1px 1px #750c37;
+}
+
+.title {
+  color: #465362;
+}
+
+.year {
+  color: #750D37;
 }
 
 .main_wrapper {
@@ -9,8 +56,12 @@ header, .subheading, form {
 
 .wrapper {
   display: inline-block;
-  text-align: center;
+  margin-bottom: 2em;
   width: 40%;
+  text-align: center;
+  background: #F4FFFD;
+  border-radius: 8px;
+
 }
 
 div.wrapper:nth-child(even) {
@@ -24,9 +75,14 @@ div.wrapper:nth-child(even) {
 .search_again_btn {
   display: flex;
   justify-content: center;
-  margin: 2em auto;
-  padding: 10px;
-  width: 80%;
-  border-radius: 5px;
+  margin: 0.45em auto 2.2em;
+  padding: 12px;
+  width: 100%;
+  background: #750D37;
+  border: none;
+  outline: none;
+  border-radius: 6px;
   font-size: 1em;
+  color: #F4FFFD;
+  box-shadow: 1px 1px #750c37;
 }

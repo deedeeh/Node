@@ -5,8 +5,9 @@
 <div class='main_wrapper'>
 <% movies.Search.forEach(movie => { %>
   <div class='wrapper'>
-    <h3><%= movie.Title %> | <%= movie.Year %></h3>
+    <h3 class='title'><%= movie.Title %></h3>
     <img class='poster_image' src='<%= movie.Poster %>'>
+    <h3 class='year'><%= movie.Year %></h3>
   </div>
 <% }) %>
 <button class='search_again_btn' onClick="location.href='/'">Search Again</button>
