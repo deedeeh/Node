@@ -6,11 +6,13 @@
 <% movies.Search.forEach(movie => { %>
   <div class='wrapper'>
     <h3 class='title'><%= movie.Title %></h3>
-    <% if(movie.Poster === 'N/A') { %>
-      <img class='poster_image' src='./assets/images/no_poster_available.png'> 
-    <% } else { %>
-      <img class='poster_image' src='<%= movie.Poster %>'> 
-    <% } %>
+    <div class='wide_posters'>
+      <% if(movie.Poster === 'N/A') { %>
+        <img class='poster_image' src='./assets/images/no_poster_available.png'> 
+      <% } else { %>
+        <img class='poster_image' src='<%= movie.Poster %>'> 
+      <% } %>
+    </div>
     <h3 class='year'><%= movie.Year %></h3>
   </div>
 <% }) %>

@@ -61,7 +61,6 @@ input.search_submit {
   text-align: center;
   background: #F4FFFD;
   border-radius: 8px;
-
 }
 
 div.wrapper:nth-child(even) {
@@ -70,6 +69,13 @@ div.wrapper:nth-child(even) {
 
 .poster_image {
   height: 400px;
+  max-width: 320px;
+}
+
+.wide_posters {
+  margin: 0 auto;
+  width: 400px;
+  overflow: hidden;
 }
 
 .search_again_btn {
